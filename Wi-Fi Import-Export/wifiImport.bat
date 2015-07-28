@@ -2,14 +2,11 @@
 goto check_Permissions
 
 :check_Permissions
-    echo Administrative permissions required. Detecting permissions...
-
     net session >nul 2>&1
     if %errorLevel% == 0 (
-        echo Success: Administrative permissions confirmed.
         goto import_WiFi
     ) else (
-        echo Failure: Current permissions inadequate. Please run this script as an Administrator.
+        echo Administrator permissions are required. Please re-run this script as an Administrator.
     )
 
     pause >nul
